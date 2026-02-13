@@ -1,0 +1,33 @@
+total_seats = 50
+
+print("🎟 Welcome to Online Ticket Booking System")
+print("Total seats available:", total_seats)
+
+while total_seats > 0:
+    try:
+        user_input = input("\nEnter number of tickets to book (or type 'exit' to quit): ")
+
+        if user_input.lower() == "exit":
+            print("Booking cancelled. Thank you!")
+            break
+        tickets = int(user_input)
+
+        if tickets <= 0:
+            raise Exception("Number of tickets must be greater than zero.")
+
+        if tickets > total_seats:
+            raise Exception("Not enough seats available.")
+        
+        total_seats -= tickets
+        print("✅ Booking successful!")
+        print("Seats remaining:", total_seats)
+
+        if total_seats == 0:
+            print("\n🎉 All seats are booked. Housefull!")
+
+    except ValueError:
+        print("❌ Please enter a valid number.")
+    except Exception as e:
+        print("❌ Error:", e)
+
+print("\nProgram ended.")
