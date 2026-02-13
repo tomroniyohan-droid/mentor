@@ -1,0 +1,27 @@
+
+balance = 10000000
+
+print("🏧 Welcome to the ATM")
+print("Your starting balance is: ₹", balance)
+
+while True:
+    try:
+        amount = input("\nEnter amount to withdraw (or type 'exit' to quit): ")
+        if amount.lower() == "exit":
+            print("Thank you for using the ATM!")
+            break
+
+        amount = int(amount)
+        if amount <= 0:
+            raise ValueError("Withdrawal amount must be greater than zero.")
+        if amount > balance:
+            raise ValueError("Insufficient balance.")
+        
+        balance -= amount
+        print("Withdrawal successful!")
+        print("Remaining balance: ₹", balance)
+
+    except ValueError as e:
+        print("Error:", e)
+    except Exception:
+        print("Something went wrong. Please try again.")
