@@ -1,0 +1,20 @@
+class Mobile:
+    def __init__(self, brand, model, price):
+        self.brand = brand
+        self.model = model
+        self.price = price
+
+    def apply_discount(self, discount_amount):
+        self.price = self.price - discount_amount
+        print("Discount applied:", discount_amount)
+
+    def display_mobile(self):
+        print("\nMobile Details")
+        print("Brand:", self.brand)
+        print("Model:", self.model)
+        print("Price:", self.price)
+
+mobile1 = Mobile("Samsung", "Galaxy S23", 75000)
+mobile1.display_mobile()
+mobile1.apply_discount(5000)
+mobile1.display_mobile()

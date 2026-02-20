@@ -1,0 +1,20 @@
+class Employee:
+    def __init__(self, name, emp_id, salary):
+        self.name = name
+        self.emp_id = emp_id
+        self.salary = salary
+
+    def increase_salary(self, amount):
+        self.salary = self.salary + amount
+        print("Salary increased by:", amount)
+
+    def display_details(self):
+        print("\nEmployee Details")
+        print("Employee Name:", self.name)
+        print("Employee ID:", self.emp_id)
+        print("Salary:", self.salary)
+
+employee1 = Employee("Yohan", "EMP101", 30000)
+employee1.display_details()
+employee1.increase_salary(5000)
+employee1.display_details()
